@@ -1,0 +1,40 @@
+.nav {
+  background-color: #272727;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav__container {
+  list-style-type: none;
+  padding: 25px;
+  margin: 0;
+  display: flex;
+}
+
+.nav__element {
+  text-decoration: underline;
+  color: #ffffff;
+  margin-right: 40px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;    
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+
+.nav__element:last-of-type {
+  margin: 0;
+}
+
+.nav__element:hover {   
+    color: #b6b3b3;
+}
+
+@media screen and (max-width: 450px) {
+    .nav__element {
+        font-size: 11px;
+        margin-right: 24px;
+    }
+}
