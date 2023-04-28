@@ -6,8 +6,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1280px;
-  margin: 18px 70px 18px;
+  margin: 11px 70px 18px;
 }
 
 .promo__logo {
@@ -57,7 +56,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  margin: 93px 0 123px;
+  margin: 101px 0 122px;
 }
 
 .promo__title {
@@ -79,7 +78,7 @@
 
 @media screen and (max-width: 768px) {
   .promo__header {
-    margin: 21px 30px 21px;
+    margin: 17px 30px 21px;
   }
 
   .promo__title {
@@ -87,13 +86,13 @@
   }
 
   .promo__container {
-    margin: 224px 0 240px;
+    margin: 244px 0 240px;
   }
 }
 
 @media screen and (max-width: 450px) {
   .promo__header {
-    margin: 14px 18px 14px;
+    margin: 18px 14px 14px;
   }
 
   .promo__link {
@@ -102,15 +101,18 @@
 
   .promo__link_type_signin {
     padding: 5px 12px;
+    margin-left: 15px;
   }
 
   .promo__container {
-    background-size: 248px 248px;
-    margin: 142px 0 180px;
+    height: 245px;
+    margin: 163px 0 181px;
+    background-size: 245px 245px;
   }
 
   .promo__title {
     font-size: 31px;
     line-height: 39px;
+    margin: 0 9px;
   }
 }

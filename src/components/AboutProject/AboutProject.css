@@ -1,6 +1,6 @@
 .about {
   background-color: #202020;
-  padding: 118px 70px;
+  padding: 118px 70px 95px;
 }
 
 .about__wrapper {
@@ -74,7 +74,7 @@
 
 @media screen and (max-width: 768px) {
   .about {
-    padding: 90px 50px;
+    padding: 90px 50px 73px;
   }
 
   .about__time-discription {

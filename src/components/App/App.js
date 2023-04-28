@@ -2,6 +2,7 @@ import "./App.css";
 // import { useState, useEffect, useCallback } from "react";
 import { Route, Routes } from "react-router-dom";
 import Main from "../Main/Main";
+import Footer from "../Footer/Footer";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           }
         />
       </Routes>
+      <Footer />
     </div>
   );
 }

@@ -27,7 +27,9 @@ function AboutProject() {
           <p className="about__web">Back-end</p>
         </div>
         <div className="about__week">
-          <h5 className="about__time-count about__time-count_type_front">4 недели</h5>
+          <h5 className="about__time-count about__time-count_type_front">
+            4 недели
+          </h5>
           <p className="about__web">Front-end</p>
         </div>
       </div>

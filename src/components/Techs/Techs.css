@@ -1,6 +1,6 @@
 .techs {
   background-color: #272727;
-  padding: 78px 70px;
+  padding: 100px 70px;
 }
 
 .techs__container {
@@ -47,7 +47,7 @@
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  transition: all .25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 
 .techs__item:hover {
@@ -82,7 +82,7 @@
 
 @media screen and (max-width: 450px) {
   .techs {
-    padding: 70px 18px;
+    padding: 59px 18px;
   }
 
   .techs__container {
@@ -97,5 +97,14 @@
 
   .techs__discription {
     margin: 0 0 50px;
+  }
+
+  .techs__list {
+    padding: 0 0.5rem;
+  }
+
+  .techs__item {
+    font-size: 12px;
+    line-height: 15px;
   }
 }

@@ -1,6 +1,6 @@
 .about-me {
   background-color: #202020;
-  padding: 131px 70px 125px;
+  padding: 112px 70px 105px;
 }
 
 .about-me__container {
@@ -69,7 +69,7 @@
 }
 
 .about-me__repo {
-  margin-top: 100px;
+  margin-top: 119px;
 }
 
 .about-me__paragraph {
@@ -77,7 +77,11 @@
   font-size: 18px;
   line-height: 20px;
   color: #8b8b8b;
-  margin: 0 0 50px;
+  margin: 0 0 33px;
+}
+
+.about-me__arrow {
+  margin-right: 5px;
 }
 
 .about-me__list {
@@ -111,7 +115,7 @@
 }
 
 .about-me__list-item:hover {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 @media screen and (max-width: 1024px) {
@@ -149,18 +153,31 @@
     font-size: 14px;
     line-height: 17px;
   }
+
+  .about-me__paragraph {
+    color: #a0a0a0;
+    margin: 0 0 28px;
+  }
+
+  .about-me__list-item {
+    font-size: 28px;
+  }
+
+  .about-me__repo {
+    margin-top: 94px;
+  }
 }
 
 @media screen and (max-width: 600px) {
   .about-me {
-    padding: 70px 14px;
+    padding: 77px 14px;
   }
 
   .about-me__container {
     margin-top: 60px;
     grid-template-columns: 1fr;
     grid-template-rows: 330px 1fr;
-    gap: 40px;
+    gap: 62px;
   }
 
   .about-me__info:last-of-type {
@@ -181,6 +198,7 @@
   .about-me__discription {
     font-size: 11px;
     line-height: 16px;
+    margin: 19px 0 20px;
   }
 
   .about-me__life {
@@ -190,5 +208,25 @@
 
   .about-me__link {
     margin-top: 40px;
+  }
+
+  .about-me__paragraph {
+    font-size: 14px;
+    margin: 0 0 18px;
+  }
+
+  .about-me__list-item {
+    font-size: 18px;
+    line-height: 28px;
+  }
+
+  .about-me__repo {
+    margin-top: 72px;
+  }
+
+  .about-me__arrow {
+    height: 0.7rem;
+    align-self: center;
+    margin-right: 5px;
   }
 }

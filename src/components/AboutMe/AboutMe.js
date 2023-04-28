@@ -54,7 +54,7 @@ function AboutMe() {
           >
             <li className="about-me__list-item">
               Статичный сайт
-              <img src={arrow} alt="Стрелка в бок для перехода на сайт"></img>
+              <img className="about-me__arrow" src={arrow} alt="Стрелка в бок для перехода на сайт"></img>
             </li>
           </a>
 
@@ -66,7 +66,7 @@ function AboutMe() {
           >
             <li className="about-me__list-item">
               Адаптивный сайт
-              <img src={arrow} alt="Стрелка в бок для перехода на сайт"></img>
+              <img className="about-me__arrow" src={arrow} alt="Стрелка в бок для перехода на сайт"></img>
             </li>
           </a>
 
@@ -78,7 +78,7 @@ function AboutMe() {
           >
             <li className="about-me__list-item">
               Одностраничное приложение
-              <img src={arrow} alt="Стрелка в бок для перехода на сайт"></img>
+              <img className="about-me__arrow" src={arrow} alt="Стрелка в бок для перехода на сайт"></img>
             </li>
           </a>
         </ul>
