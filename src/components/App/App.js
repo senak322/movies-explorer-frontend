@@ -1,10 +1,13 @@
 import "./App.css";
 // import { useState, useEffect, useCallback } from "react";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation  } from "react-router-dom";
 import Main from "../Main/Main";
 import Footer from "../Footer/Footer";
+import Register from "../Register/Register";
 
 function App() {
+  const { pathname } = useLocation();
+
   return (
     <div className="App">
       <Routes>
@@ -12,19 +15,19 @@ function App() {
         <Route
           path="/signup"
           element={
-            <div>Регистер</div>
+            <Register />
             // <Register handleRegister={handleRegister} isLoading={isLoading} />
           }
         />
         <Route
           path="/signin"
           element={
-            <div>Регистер</div>
+            <Register />
             // <Register handleRegister={handleRegister} isLoading={isLoading} />
           }
         />
       </Routes>
-      <Footer />
+      {pathname === '/' && <Footer />}
     </div>
   );
 }
