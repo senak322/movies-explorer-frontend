@@ -1,7 +1,6 @@
 import AboutTitle from "../AboutTitle/AboutTitle";
 import "./AboutMe.css";
-import myImage from "../../images/myimage.jpeg";
-import arrow from "../../images/arrow.svg";
+import myImage from "../../images/myimage.jpeg";  
 
 function AboutMe() {
   return (
@@ -43,46 +42,7 @@ function AboutMe() {
           ></img>
         </div>
       </div>
-      <div className="about-me__repo">
-        <p className="about-me__paragraph">Портфолио</p>
-        <ul className="about-me__list">
-          <a
-            className="about-me__list-link"
-            href="https://github.com/senak322/how-to-learn"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <li className="about-me__list-item">
-              Статичный сайт
-              <img className="about-me__arrow" src={arrow} alt="Стрелка в бок для перехода на сайт"></img>
-            </li>
-          </a>
-
-          <a
-            className="about-me__list-link"
-            href="https://github.com/senak322/russian.travel"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <li className="about-me__list-item">
-              Адаптивный сайт
-              <img className="about-me__arrow" src={arrow} alt="Стрелка в бок для перехода на сайт"></img>
-            </li>
-          </a>
-
-          <a
-            className="about-me__list-link"
-            href="https://github.com/senak322/react-mesto-api-full"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <li className="about-me__list-item">
-              Одностраничное приложение
-              <img className="about-me__arrow" src={arrow} alt="Стрелка в бок для перехода на сайт"></img>
-            </li>
-          </a>
-        </ul>
-      </div>
+      
     </section>
   );
 }

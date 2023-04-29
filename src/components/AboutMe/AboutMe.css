@@ -1,6 +1,6 @@
 .about-me {
   background-color: #202020;
-  padding: 112px 70px 105px;
+  padding: 112px 70px 25px;
 }
 
 .about-me__container {
@@ -72,52 +72,6 @@
   margin-top: 119px;
 }
 
-.about-me__paragraph {
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 20px;
-  color: #8b8b8b;
-  margin: 0 0 33px;
-}
-
-.about-me__arrow {
-  margin-right: 5px;
-}
-
-.about-me__list {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.about-me__list-item {
-  padding: 20px 0 19px;
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  transition: all 0.3s ease-in-out;
-}
-
-.about-me__list-link {
-  display: flex;
-  justify-content: space-between;
-  color: #ffffff;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 50px;
-  letter-spacing: -0.04em;
-  text-decoration: none;
-  border-bottom: 1px solid #424242;
-}
-
-.about-me__list-link:last-of-type {
-  border-bottom: none;
-}
-
-.about-me__list-item:hover {
-  opacity: 0.5;
-}
-
 @media screen and (max-width: 1024px) {
   .about-me__info {
     gap: 2rem;
@@ -153,24 +107,11 @@
     font-size: 14px;
     line-height: 17px;
   }
-
-  .about-me__paragraph {
-    color: #a0a0a0;
-    margin: 0 0 28px;
-  }
-
-  .about-me__list-item {
-    font-size: 28px;
-  }
-
-  .about-me__repo {
-    margin-top: 94px;
-  }
 }
 
 @media screen and (max-width: 600px) {
   .about-me {
-    padding: 77px 14px;
+    padding: 77px 14px 70px;
   }
 
   .about-me__container {
@@ -210,23 +151,7 @@
     margin-top: 40px;
   }
 
-  .about-me__paragraph {
-    font-size: 14px;
-    margin: 0 0 18px;
-  }
-
-  .about-me__list-item {
-    font-size: 18px;
-    line-height: 28px;
-  }
-
   .about-me__repo {
     margin-top: 72px;
-  }
-
-  .about-me__arrow {
-    height: 0.7rem;
-    align-self: center;
-    margin-right: 5px;
   }
 }

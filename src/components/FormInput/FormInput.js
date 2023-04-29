@@ -27,7 +27,11 @@ function FormInput({
         onChange={handleChange}
         onBlur={handleBlur}
       ></input>
-      <span className={`form-input__error ${isValid ? "" : "form-input__error_active"}`}>
+      <span
+        className={`form-input__error ${
+          isValid ? "" : "form-input__error_active"
+        }`}
+      >
         {errors[name]}
       </span>
     </>
