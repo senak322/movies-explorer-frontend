@@ -5,6 +5,7 @@ function useFormAndValidation() {
   const [isValid, setIsValid] = useState(false);
   const [isInputValid, setIsInputValid] = useState(true);
   const [errors, setErrors] = useState({});
+  const [checked, setChecked] = useState(true);
 
   const handleChange = (event) => {
     const { value, name } = event.target;
@@ -20,6 +21,10 @@ function useFormAndValidation() {
     setIsValid(event.target.closest("form").checkValidity());
     setIsInputValid(event.target.closest("input").checkValidity());
   };
+
+  function chengeCheckbox() {
+    setChecked(!checked);
+  }
 
   const resetForm = useCallback(
     (newValues = {}, newErrors = {}, newIsValid = false) => {
@@ -41,6 +46,8 @@ function useFormAndValidation() {
     handleBlur,
     isInputValid,
     resetForm,
+    checked,
+    chengeCheckbox,
   };
 }
 

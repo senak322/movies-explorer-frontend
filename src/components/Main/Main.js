@@ -5,10 +5,15 @@ import Techs from "../Techs/Techs";
 import AboutMe from "../AboutMe/AboutMe";
 import Portfolio from "../Portfolio/Portfolio";
 
-function Main() {
+function Main({ isLoggedIn, width, isBurgerActive, handleToggleBurger }) {
   return (
     <>
-      <Promo />
+      <Promo
+        isLoggedIn={isLoggedIn}
+        width={width}
+        isBurgerActive={isBurgerActive}
+        handleToggleBurger={handleToggleBurger}
+      />
       <NavTab />
       <AboutProject />
       <Techs />
