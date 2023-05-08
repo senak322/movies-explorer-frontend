@@ -5,7 +5,7 @@ import Header from "../Header/Header";
 
 function Promo({ isLoggedIn, width, isBurgerActive, handleToggleBurger }) {
   return (
-    <section className="promo">
+    <header className="promo">
       {isLoggedIn ? (
         <Header
           width={width}
@@ -14,7 +14,7 @@ function Promo({ isLoggedIn, width, isBurgerActive, handleToggleBurger }) {
           isPromo={true}
         />
       ) : (
-        <header className="promo__header">
+        <section className="promo__header">
           <img className="promo__logo" src={logo} alt="logo"></img>
           <div>
             <Link
@@ -27,7 +27,7 @@ function Promo({ isLoggedIn, width, isBurgerActive, handleToggleBurger }) {
               Войти
             </Link>
           </div>
-        </header>
+        </section>
       )}
       
       <div className="promo__container">
@@ -35,7 +35,7 @@ function Promo({ isLoggedIn, width, isBurgerActive, handleToggleBurger }) {
           Учебный проект студента факультета Веб-разработки.
         </h1>
       </div>
-    </section>
+    </header>
   );
 }
 

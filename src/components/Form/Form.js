@@ -35,7 +35,7 @@ function Form({
   }, [cbSetValues, resetForm]);
 
   return (
-    <section className="form">
+    <main className="form">
       <div className="form__wrapper">
         <Link to="/">
           <img className="form__logo" src={logo} alt="logo"></img>
@@ -90,7 +90,7 @@ function Form({
           </div>
         </form>
       </div>
-    </section>
+    </main>
   );
 }
 export default Form;

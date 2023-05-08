@@ -1,4 +1,4 @@
-.form-input__label {
+.form-label {
   font-weight: 400;
   font-size: 10px;
   line-height: 12px;
@@ -6,7 +6,7 @@
   margin-bottom: 10px;
 }
 
-.form-input__input {
+.form-input {
   padding: 15px;
   color: #ffffff;
   background-color: #2f2f2f;
@@ -18,11 +18,11 @@
   transition: all 0.25s linear;
 }
 
-.form-input__input_error {
+.form-input_error {
   color: #ee3465;
 }
 
-.form-input__error {
+.form-span-error {
   font-weight: 400;
   font-size: 10px;
   line-height: 12px;
@@ -33,21 +33,21 @@
   opacity: 0;
 }
 
-.form-input__error_active {
+.form-span-error_active {
   visibility: visible;
   opacity: 1;
 }
 
-.form-input__input:hover {
+.form-input:hover {
   border: 1px solid black;
 }
 
-.form-input__input_error:hover {
+.form-input_error:hover {
   border: 1px solid #ee3465;
 }
 
 @media screen and (max-width: 768px) {
-  .form-input__error {
+  .form-span-error {
     margin: 6px 0 3px;
   }
 }

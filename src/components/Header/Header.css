@@ -52,7 +52,7 @@ li .header__link_active {
   color: #ffffff;
 }
 
-.header__link_type_profile {
+.header-profile {
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;

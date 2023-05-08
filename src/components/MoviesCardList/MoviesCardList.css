@@ -5,9 +5,10 @@
   display: flex;
   gap: 37px 20px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
-.movies-list__btn {
+.movies-list-btn {
   width: 100%;
   margin: 59px 0 0;
   height: 38px;

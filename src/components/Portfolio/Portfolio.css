@@ -29,7 +29,6 @@
   font-size: 30px;
   line-height: 50px;
   letter-spacing: -0.04em;
-  text-decoration: none;
   border-bottom: 1px solid #424242;
 }
 
@@ -41,6 +40,8 @@
   padding: 20px 0 19px;
   display: flex;
   width: 100%;
+  text-decoration: none;
+  color: #ffffff;
   justify-content: space-between;
   transition: all 0.3s ease-in-out;
 }

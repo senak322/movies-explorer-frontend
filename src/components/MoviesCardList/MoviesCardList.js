@@ -35,7 +35,7 @@ function MoviesCardList({ saved, films, handleMoreFilms, movies }) {
             })}
       </ul>
       {!saved && movies.length > films.length && (
-        <button onClick={handleMoreFilms} className="movies-list__btn">
+        <button onClick={handleMoreFilms} className="movies-list-btn">
           Ещё
         </button>
       )}

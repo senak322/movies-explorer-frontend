@@ -5,7 +5,7 @@ import "./Navigation.css";
 
 function Navigation({ isBurgerActive, handleToggleBurger }) {
   const setActive = ({ isActive }) =>
-    isActive ? "header__link header__link_active" : "header__link";
+    isActive ? "navigation__link navigation__link_active" : "navigation__link";
 
   return (
     <nav className={`navigation ${isBurgerActive ? "navigation_active" : ""}`}>
@@ -42,7 +42,7 @@ function Navigation({ isBurgerActive, handleToggleBurger }) {
           </div>
           <li className="navigation__item">
             <NavLink className={setActive} to="/profile">
-              <p className="header__link_type_profile">Аккаунт</p>
+              <p className="navigation__account">Аккаунт</p>
             </NavLink>
           </li>
         </ul>

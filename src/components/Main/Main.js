@@ -14,11 +14,13 @@ function Main({ isLoggedIn, width, isBurgerActive, handleToggleBurger }) {
         isBurgerActive={isBurgerActive}
         handleToggleBurger={handleToggleBurger}
       />
-      <NavTab />
-      <AboutProject />
-      <Techs />
-      <AboutMe />
-      <Portfolio />
+      <main>
+        <NavTab />
+        <AboutProject />
+        <Techs />
+        <AboutMe />
+        <Portfolio />
+      </main>
     </>
   );
 }

@@ -12,12 +12,12 @@ function FormInput({
 }) {
   return (
     <>
-      <label className="form-input__label" htmlFor="name">
+      <label className="form-label" htmlFor="name">
         {label}
       </label>
       <input
-        className={`form-input__input ${
-          errors[name] === "" ? "" : "form-input__input_error"
+        className={`form-input ${
+          errors[name] === "" ? "" : "form-input_error"
         }`}
         id={name}
         name={name}
@@ -28,8 +28,8 @@ function FormInput({
         onBlur={handleBlur}
       ></input>
       <span
-        className={`form-input__error ${
-          isValid ? "" : "form-input__error_active"
+        className={`form-span-error ${
+          isValid ? "" : "form-span-error_active"
         }`}
       >
         {errors[name]}

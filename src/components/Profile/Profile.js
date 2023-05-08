@@ -2,7 +2,7 @@ import "./Profile.css";
 
 function Profile({handleLogout}) {
   return (
-    <section className="profile">
+    <main className="profile">
       
         <h1 className="profile__title">Привет, Александр!</h1>
         <div className="profile__container">
@@ -18,7 +18,7 @@ function Profile({handleLogout}) {
           Выйти из аккаунта
         </button>
       
-    </section>
+    </main>
   );
 }
 

@@ -25,7 +25,7 @@ function Header({ width, isBurgerActive, handleToggleBurger, isPromo }) {
             </NavLink>
           </div>
           <NavLink className={setActive} to="/profile">
-            <p className="header__link_type_profile">Аккаунт</p>
+            <p className="header-profile">Аккаунт</p>
           </NavLink>
         </>
       ) : (

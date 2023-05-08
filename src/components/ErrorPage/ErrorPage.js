@@ -8,7 +8,7 @@ function ErrorPage() {
     navigate(-1);
   };
   return (
-    <section className="error-page">
+    <main className="error-page">
       <div className="error-page__wrapper">
         <h1 className="error-page__header">404</h1>
         <p className="error-page__discription">Страница не найдена</p>
@@ -16,7 +16,7 @@ function ErrorPage() {
       <button type="button" onClick={goBack} className="error-page__back-btn">
         Назад
       </button>
-    </section>
+    </main>
   );
 }
 export default ErrorPage;
