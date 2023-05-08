@@ -31,6 +31,8 @@
   line-height: 16px;
   color: #ffffff;
   margin: 20px 0 20px;
+  text-decoration: none;
+  transition: all .25s ease-in-out;
 }
 
 .footer__container {
@@ -39,6 +41,10 @@
 
 .footer__container .footer__text:last-of-type {
   margin-left: 20px;
+}
+
+.footer__container .footer__text:hover {
+  opacity: .7;
 }
 
 @media screen and (max-width: 768px) {

@@ -10,8 +10,8 @@ function Footer() {
         <div className="footer__box">
           <p className="footer__text">© 2023</p>
           <div className="footer__container">
-            <p className="footer__text">Яндекс.Практикум</p>
-            <p className="footer__text">Github</p>
+            <a href="https://practicum.yandex.ru/" className="footer__text">Яндекс.Практикум</a>
+            <a href="https://github.com/" className="footer__text">Github</a>
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@ import AboutTitle from "../AboutTitle/AboutTitle";
 
 function Techs() {
   return (
-    <section className="techs">
+    <section className="techs" id="techs">
       <AboutTitle about="Технологии" />
       <div className="techs__container">
         <h4 className="techs__head">7 технологий</h4>
