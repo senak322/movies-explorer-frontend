@@ -1,0 +1,79 @@
+.error-page {
+  background-color: #202020;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.error-page__wrapper {
+  position: relative;
+  margin-bottom: 81px;
+}
+
+.error-page__header {
+  font-weight: 400;
+  font-size: 140px;
+  line-height: 169px;
+  color: #ffffff;
+  margin: -9px;
+}
+
+.error-page__discription {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ffffff;
+}
+
+.error-page__back-btn {
+  position: absolute;
+  bottom: 150px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+  color: #4285f4;
+  background-color: transparent;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+.error-page__back-btn:hover {
+  color: #1e62d0;
+}
+
+@media screen and (max-width: 768px) {
+  .error-page__back-btn {
+    bottom: 130px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .error-page__header {
+    font-size: 80px;
+    line-height: 97px;
+  }
+
+  .error-page__discription {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .error-page__header {
+    margin: -3px;
+  }
+
+  .error-page__wrapper {
+    margin-bottom: 13px;
+  }
+
+  .error-page__back-btn {
+    bottom: 29px;
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
