@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./Form.css";
 import useFormAndValidation from "../../utils/useFormAndValidation";
 import FormInput from "../FormInput/FormInput";
+import { EMAILPATTERN } from "../../utils/constants";
 
 function Form({
   isRegister,
@@ -12,6 +13,9 @@ function Form({
   areRegistered,
   link,
   linkBtn,
+  onSubmit,
+  searchErr,
+  setSearchErr,
 }) {
   const {
     values,
@@ -20,7 +24,6 @@ function Form({
     errors,
     isValid,
     handleBlur,
-    // isInputValid,
     resetForm,
   } = useFormAndValidation();
 
@@ -32,7 +35,16 @@ function Form({
   useEffect(() => {
     cbSetValues();
     resetForm();
-  }, [cbSetValues, resetForm]);
+    setSearchErr("");
+  }, [cbSetValues, resetForm, setSearchErr]);
+
+  const handleSubmit = useCallback(
+    (e) => {
+      e.preventDefault();
+      onSubmit(values);
+    },
+    [onSubmit, values]
+  );
 
   return (
     <main className="form">
@@ -41,7 +53,7 @@ function Form({
           <img className="form__logo" src={logo} alt="logo"></img>
         </Link>
         <h1 className="form__heading">{heading}</h1>
-        <form className="form__container">
+        <form className="form__container" onSubmit={handleSubmit}>
           <fieldset className="form__fieldset">
             {isRegister && (
               <FormInput
@@ -53,7 +65,7 @@ function Form({
                 isValid={isValid}
                 handleChange={handleChange}
                 handleBlur={handleBlur}
-                //   isInputValid={isInputValid}
+                required
               />
             )}
             <FormInput
@@ -65,7 +77,8 @@ function Form({
               isValid={isValid}
               handleChange={handleChange}
               handleBlur={handleBlur}
-              // isInputValid={isInputValid}
+              required
+              pattern={EMAILPATTERN}
             />
             <FormInput
               label="Пароль"
@@ -76,10 +89,20 @@ function Form({
               isValid={isValid}
               handleChange={handleChange}
               handleBlur={handleBlur}
-              // isInputValid={isInputValid}
+              required
             />
+            {searchErr && (
+              <span className="form-span-error form-span-error_active">
+                {searchErr}
+              </span>
+            )}
           </fieldset>
-          <button className="form__btn" disabled={isValid ? false : true}>
+
+          <button
+            type="submit"
+            className="form__btn"
+            disabled={isValid ? false : true}
+          >
             {buttonText}
           </button>
           <div className="form__questions">

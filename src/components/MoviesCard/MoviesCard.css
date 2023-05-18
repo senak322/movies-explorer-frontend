@@ -1,9 +1,12 @@
 .movies-card {
+  width: 100%;
   max-width: 270px;
 }
 
 .movies-card__img {
   margin-bottom: 10px;
+  width: 270px;
+  height: 151px;
 }
 
 .movies-card__container {
@@ -64,7 +67,7 @@
   }
 
   .movies-card__img {
-    min-width: 339px;
+    max-width: 339px;
   }
 }
 
