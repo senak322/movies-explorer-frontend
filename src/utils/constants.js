@@ -1,3 +1,3 @@
-const EMAILPATTERN = "[a-z0-9]+@[a-z]+.[a-z]{2,3}";
+const EMAILPATTERN = '[A-z0-9_.-]{1,}@[A-z0-9_.-]{1,}[.][A-z]{2,6}';
 
 export {EMAILPATTERN}

@@ -73,6 +73,7 @@ function App() {
     localStorage.removeItem("movies");
     localStorage.removeItem("token");
     localStorage.removeItem("sortedArrByInput");
+    localStorage.removeItem("input");
     localStorage.clear();
     setUserInfo(null);
   }, [history]);
@@ -88,11 +89,13 @@ function App() {
         })
         .catch((err) => {
           console.log(err);
+          setIsLoggedIn(false);
         })
         .finally(() => {
           setIsLoading(false);
         });
     } else {
+      setIsLoggedIn(false);
       setIsLoading(false);
     }
   }, []);
@@ -190,7 +193,15 @@ function App() {
   const handleFilmsToShow = useCallback(
     (arr) => {
       if (arr) {
-        if (width > 769) {
+        if (width >= 1280) {
+          const newFilms = arr.slice(0, 16);
+          setFilmsToShow(newFilms);
+        }
+        if (width < 1280 && width > 989) {
+          const newFilms = arr.slice(0, 15);
+          setFilmsToShow(newFilms);
+        }
+        if (width < 990 && width > 769) {
           const newFilms = arr.slice(0, 16);
           setFilmsToShow(newFilms);
         }
@@ -307,9 +318,11 @@ function App() {
     const arr = filtredArrByInput;
     let moreMoviesToShow = [];
     const showMoviesLength = filmsToShow.length;
-
-    if (width > 769) {
+    if(width >= 1280) {
       moreMoviesToShow = arr.slice(showMoviesLength, showMoviesLength + 4);
+    }
+    else if (width < 1280 && width > 989) {
+      moreMoviesToShow = arr.slice(showMoviesLength, showMoviesLength + 3);
     } else {
       moreMoviesToShow = arr.slice(showMoviesLength, showMoviesLength + 2);
     }

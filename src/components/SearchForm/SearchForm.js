@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./SearchForm.css";
 import FilterCheckbox from "../FilterCheckbox/FilterCheckbox";
 import useFormAndValidation from "../../utils/useFormAndValidation";
@@ -9,31 +9,43 @@ function SearchForm({
   setSearchErr,
   handleGetSavedMovies,
   saved,
-  onCheckBox
+  onCheckBox,
 }) {
-  const [inputValue, setInputValue] = useState(localStorage.getItem("input") || "");
+  const input = localStorage.getItem("input");
+  const inputToState = input === null ? "" : input;
 
-  const { checked, chengeCheckbox, isValid } =
-    useFormAndValidation();
+  const [inputValue, setInputValue] = useState(inputToState || "");
 
-    const handleChange = (e) => {
-      setInputValue(e.target.value)
-    }
+  const { checked, chengeCheckbox, isValid } = useFormAndValidation();
+
+  const handleChange = (e) => {
+    setInputValue(e.target.value);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (e.target.search.value === "") {
       return setSearchErr("Нужно ввести ключевое слово");
     }
-    saved ? handleGetSavedMovies(inputValue, checked) : handleGetAllMovies(inputValue, checked);
+    saved
+      ? handleGetSavedMovies(inputValue, checked)
+      : handleGetAllMovies(inputValue, checked);
 
     setSearchErr("");
   };
 
   const handleChangeCheckBox = () => {
     chengeCheckbox();
-    onCheckBox(checked)
-  }
+    onCheckBox(checked);
+  };
+
+  useEffect(() => {
+    if (!saved) {
+      setInputValue(inputToState);
+    } else {
+      setInputValue("");
+    }
+  }, [saved, inputToState]);
 
   return (
     <section className="search">
@@ -58,7 +70,10 @@ function SearchForm({
         >
           {searchErr}
         </span>
-        <FilterCheckbox isChecked={checked} onChengeCheckbox={handleChangeCheckBox} />
+        <FilterCheckbox
+          isChecked={checked}
+          onChengeCheckbox={handleChangeCheckBox}
+        />
       </form>
     </section>
   );
