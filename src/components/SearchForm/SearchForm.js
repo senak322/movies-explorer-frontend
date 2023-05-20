@@ -16,7 +16,8 @@ function SearchForm({
 
   const [inputValue, setInputValue] = useState(inputToState || "");
 
-  const { checked, chengeCheckbox, isValid } = useFormAndValidation();
+  const { checked, chengeCheckbox, isValid, savedChecked, chengeSaveCheckbox, setSavedChecked } =
+    useFormAndValidation();
 
   const handleChange = (e) => {
     setInputValue(e.target.value);
@@ -39,6 +40,11 @@ function SearchForm({
     onCheckBox(checked);
   };
 
+  const handleChangeSavedCheckBox = () => {
+    chengeSaveCheckbox();
+    onCheckBox(savedChecked);
+  };
+
   useEffect(() => {
     if (!saved) {
       setInputValue(inputToState);
@@ -46,6 +52,13 @@ function SearchForm({
       setInputValue("");
     }
   }, [saved, inputToState]);
+
+  useEffect(() => {
+    if (saved) {
+      setSavedChecked(false);
+    }
+  }, [saved, setSavedChecked]);
+
 
   return (
     <section className="search">
@@ -71,8 +84,10 @@ function SearchForm({
           {searchErr}
         </span>
         <FilterCheckbox
-          isChecked={checked}
-          onChengeCheckbox={handleChangeCheckBox}
+          isChecked={saved ? savedChecked : checked}
+          onChengeCheckbox={
+            saved ? handleChangeSavedCheckBox : handleChangeCheckBox
+          }
         />
       </form>
     </section>

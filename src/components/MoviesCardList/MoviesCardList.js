@@ -10,7 +10,7 @@ function MoviesCardList({
   moviesArr,
   handleDisLikeCard,
   onCheckLike,
-}) {  
+}) {
   return (
     <section>
       <ul className="movies-list">

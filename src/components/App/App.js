@@ -37,6 +37,7 @@ function App() {
   const [filmsToShow, setFilmsToShow] = useState([]);
   const [savedMovies, setSavedMovies] = useState([]);
   const [savedFilmsToShow, setSavedFilmsToShow] = useState([]);
+  const [savedFiltredArrByInput, setSavedFiltredArrByInput] = useState([]);
   const [savedSearchedErr, setSavedSearchedErr] = useState("");
   const [filtredArrByInput, setFiltredArrByInput] = useState(
     JSON.parse(localStorage.getItem("sortedArrByInput")) || []
@@ -318,10 +319,9 @@ function App() {
     const arr = filtredArrByInput;
     let moreMoviesToShow = [];
     const showMoviesLength = filmsToShow.length;
-    if(width >= 1280) {
+    if (width >= 1280) {
       moreMoviesToShow = arr.slice(showMoviesLength, showMoviesLength + 4);
-    }
-    else if (width < 1280 && width > 989) {
+    } else if (width < 1280 && width > 989) {
       moreMoviesToShow = arr.slice(showMoviesLength, showMoviesLength + 3);
     } else {
       moreMoviesToShow = arr.slice(showMoviesLength, showMoviesLength + 2);
@@ -331,7 +331,6 @@ function App() {
   }
 
   const handleFilterByCheckBoxSavedMovies = useCallback((arr, checked) => {
-    localStorage.setItem("savedChecked", checked);
     if (checked) {
       const newArr = arr.filter((movie) => movie.duration <= 40);
       setSavedFilmsToShow(newArr);
@@ -349,6 +348,7 @@ function App() {
   const handleFilterSavedMovies = useCallback(
     (value, checked) => {
       const filtredArr = filterByInput(savedMovies, value);
+      setSavedFiltredArrByInput(filtredArr)
       if (checked) {
         return handleFilterByCheckBoxSavedMovies(filtredArr, checked);
       }
@@ -365,14 +365,15 @@ function App() {
 
   const handleSavedCheckBoxClick = useCallback(
     (checked) => {
+      
       if (!checked) {
-        handleFilterByCheckBoxSavedMovies(savedMovies, !checked);
+        handleFilterByCheckBoxSavedMovies(savedFiltredArrByInput ? savedFiltredArrByInput : savedMovies, !checked);
       } else {
-        setSavedFilmsToShow(savedMovies);
+        setSavedFilmsToShow(savedFiltredArrByInput ? savedFiltredArrByInput : savedMovies);
         setSavedSearchedErr("");
       }
     },
-    [handleFilterByCheckBoxSavedMovies, savedMovies]
+    [handleFilterByCheckBoxSavedMovies, savedFiltredArrByInput, savedMovies]
   );
 
   const handleLikeCard = useCallback((el) => {
@@ -463,6 +464,14 @@ function App() {
       handleFilmsToShow(movies);
     }
   }, [handleFilmsToShow]);
+
+  useEffect(() => {
+    if (isSaved) {
+      setSavedSearchedErr("");
+      setSavedFilmsToShow(savedMovies);
+      setSavedFiltredArrByInput(null)
+    }
+  }, [isSaved, savedMovies]);
 
   if (isLoading) {
     return <Preloader />;

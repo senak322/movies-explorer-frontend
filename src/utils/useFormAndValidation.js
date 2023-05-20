@@ -14,6 +14,7 @@ function useFormAndValidation() {
   }
   const check = isCheckvalid();
   const [checked, setChecked] = useState(check || false);
+  const [savedChecked, setSavedChecked] = useState(false)
 
   const handleChange = (event) => {
     const { value, name } = event.target;
@@ -33,6 +34,10 @@ function useFormAndValidation() {
 
   function chengeCheckbox() {
     setChecked(!checked);
+  }
+
+  function chengeSaveCheckbox() {
+    setSavedChecked(!savedChecked);
   }
 
   const resetForm = useCallback(
@@ -57,6 +62,10 @@ function useFormAndValidation() {
     resetForm,
     checked,
     chengeCheckbox,
+    setChecked,
+    chengeSaveCheckbox,
+    savedChecked,
+    setSavedChecked
   };
 }
 
