@@ -10,12 +10,16 @@ function MoviesCardList({
   moviesArr,
   handleDisLikeCard,
   onCheckLike,
+  savedSearchedErr
 }) {
-  return (
+
+  const searchErr = saved ? savedSearchedErr : searchedErr
+
+  return (  
     <section>
       <ul className="movies-list">
-        {searchedErr && (
-          <p className="movies-list__description">{searchedErr}</p>
+        {searchErr && (
+          <p className="movies-list__description">{searchErr}</p>
         )}
 
         {!moviesArr

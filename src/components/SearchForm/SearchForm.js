@@ -29,7 +29,7 @@ function SearchForm({
       return setSearchErr("Нужно ввести ключевое слово");
     }
     saved
-      ? handleGetSavedMovies(inputValue, checked)
+      ? handleGetSavedMovies(inputValue, savedChecked)
       : handleGetAllMovies(inputValue, checked);
 
     setSearchErr("");

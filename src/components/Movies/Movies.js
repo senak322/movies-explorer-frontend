@@ -19,7 +19,8 @@ function Movies({
   moviesArr,
   handleDisLikeCard,
   onCheckBox,
-  onCheckLike
+  onCheckLike,
+  savedSearchedErr
 }) {
   useEffect(() => {
     handleFilmsToShow();
@@ -50,6 +51,7 @@ function Movies({
             moviesArr={moviesArr}
             handleDisLikeCard={handleDisLikeCard}
             onCheckLike={onCheckLike}
+            savedSearchedErr={savedSearchedErr}
           />
         )}
       </div>

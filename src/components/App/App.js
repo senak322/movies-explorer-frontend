@@ -341,6 +341,11 @@ function App() {
       }
       return;
     } else {
+      if (!arr.length > 0) {
+        setSavedSearchedErr("Ничего не найдено");
+      } else {
+        setSavedSearchedErr("");
+      }
       return arr;
     }
   }, []);
@@ -348,7 +353,7 @@ function App() {
   const handleFilterSavedMovies = useCallback(
     (value, checked) => {
       const filtredArr = filterByInput(savedMovies, value);
-      setSavedFiltredArrByInput(filtredArr)
+      setSavedFiltredArrByInput(filtredArr);
       if (checked) {
         return handleFilterByCheckBoxSavedMovies(filtredArr, checked);
       }
@@ -365,11 +370,15 @@ function App() {
 
   const handleSavedCheckBoxClick = useCallback(
     (checked) => {
-      
       if (!checked) {
-        handleFilterByCheckBoxSavedMovies(savedFiltredArrByInput ? savedFiltredArrByInput : savedMovies, !checked);
+        handleFilterByCheckBoxSavedMovies(
+          savedFiltredArrByInput ? savedFiltredArrByInput : savedMovies,
+          !checked
+        );
       } else {
-        setSavedFilmsToShow(savedFiltredArrByInput ? savedFiltredArrByInput : savedMovies);
+        setSavedFilmsToShow(
+          savedFiltredArrByInput ? savedFiltredArrByInput : savedMovies
+        );
         setSavedSearchedErr("");
       }
     },
@@ -467,11 +476,19 @@ function App() {
 
   useEffect(() => {
     if (isSaved) {
-      setSavedSearchedErr("");
+      // setSavedSearchedErr("");
       setSavedFilmsToShow(savedMovies);
-      setSavedFiltredArrByInput(null)
+      setSavedFiltredArrByInput(null);
     }
   }, [isSaved, savedMovies]);
+
+  useEffect(() => {
+    if (isSaved && !savedFilmsToShow.length > 0) {
+      setSavedSearchedErr("Ничего не найдено");
+    } else {
+      setSavedSearchedErr("")
+    }
+  }, [isSaved, savedFilmsToShow]);
 
   if (isLoading) {
     return <Preloader />;
@@ -545,6 +562,7 @@ function App() {
                   onCheckBox={handleSavedCheckBoxClick}
                   handleGetMe={handleGetMe}
                   onCheckLike={handleCheckLike}
+                  savedSearchedErr={savedSearchedErr}
                 />
               </ProtectedRoute>
             }
