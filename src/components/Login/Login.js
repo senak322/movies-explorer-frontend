@@ -1,6 +1,11 @@
 import Form from "../Form/Form";
+import { Navigate } from "react-router-dom";
 
-function Login() {
+function Login({ handleLogin, isLoggedIn, searchErr, setSearchErr }) {
+  if (isLoggedIn) {
+    return <Navigate to="/profile" />;
+  }
+
   return (
     <Form
       isRegister={false}
@@ -9,6 +14,9 @@ function Login() {
       areRegistered="Ещё не зарегистрированы?"
       link="/signup"
       linkBtn="Регистрация"
+      onSubmit={handleLogin}
+      searchErr={searchErr}
+      setSearchErr={setSearchErr}
     />
   );
 }

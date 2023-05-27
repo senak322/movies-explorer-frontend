@@ -27,6 +27,13 @@
   background-color: #242424;
 }
 
+.movies-list__description {
+  color: #ffffff;
+  text-align: center;
+  margin: 0;
+  max-width: 80%;
+}
+
 @media screen and (max-width: 768px) {
   .movies-list {
     gap: 30px 28px;
@@ -37,5 +44,5 @@
 @media screen and (max-width: 500px) {
   .movies-list {
     margin: 50px 0 0;
-}
+  }
 }

@@ -9,6 +9,7 @@ function FormInput({
   handleBlur,
   isValid,
   errors,
+  pattern
 }) {
   return (
     <>
@@ -26,6 +27,7 @@ function FormInput({
         value={values[name] || ""}
         onChange={handleChange}
         onBlur={handleBlur}
+        pattern={pattern}
       ></input>
       <span
         className={`form-span-error ${

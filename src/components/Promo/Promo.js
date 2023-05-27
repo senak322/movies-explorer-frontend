@@ -2,8 +2,14 @@ import "./Promo.css";
 import logo from "../../images/logo.svg";
 import { Link } from "react-router-dom";
 import Header from "../Header/Header";
+import { useEffect } from "react";
 
 function Promo({ isLoggedIn, width, isBurgerActive, handleToggleBurger }) {
+
+  useEffect(() => {
+
+  }, [])
+
   return (
     <header className="promo">
       {isLoggedIn ? (
@@ -29,7 +35,7 @@ function Promo({ isLoggedIn, width, isBurgerActive, handleToggleBurger }) {
           </div>
         </section>
       )}
-      
+
       <div className="promo__container">
         <h1 className="promo__title">
           Учебный проект студента факультета Веб-разработки.

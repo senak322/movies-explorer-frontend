@@ -5,7 +5,16 @@ function useFormAndValidation() {
   const [isValid, setIsValid] = useState(false);
   const [isInputValid, setIsInputValid] = useState(true);
   const [errors, setErrors] = useState({});
-  const [checked, setChecked] = useState(true);
+  const isCheckvalid = () => {
+    const checkFromLocal = localStorage.getItem("checked")
+    if(checkFromLocal !== "undefined") {
+      const check = JSON.parse(checkFromLocal)
+      return check
+    }
+  }
+  const check = isCheckvalid();
+  const [checked, setChecked] = useState(check || false);
+  const [savedChecked, setSavedChecked] = useState(false)
 
   const handleChange = (event) => {
     const { value, name } = event.target;
@@ -13,6 +22,7 @@ function useFormAndValidation() {
     setIsValid(event.target.closest("form").checkValidity());
     setIsInputValid(event.target.closest("input").checkValidity());
     setErrors({ ...errors, [name]: event.currentTarget.validationMessage });
+    console.log(values);
   };
 
   const handleBlur = (event) => {
@@ -24,6 +34,10 @@ function useFormAndValidation() {
 
   function chengeCheckbox() {
     setChecked(!checked);
+  }
+
+  function chengeSaveCheckbox() {
+    setSavedChecked(!savedChecked);
   }
 
   const resetForm = useCallback(
@@ -48,6 +62,10 @@ function useFormAndValidation() {
     resetForm,
     checked,
     chengeCheckbox,
+    setChecked,
+    chengeSaveCheckbox,
+    savedChecked,
+    setSavedChecked
   };
 }
 
